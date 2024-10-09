@@ -1,0 +1,52 @@
+1.-------------PISANIE
+jesli program jest dłuzszy zaleca sie pisanie gow klasie
+np:
+
+class App
+{
+[tresc programu]
+}
+
+piszac w cs piszemy pod maszyne wirtualna .net
+
+2.-------------KONWERSJA
+y=3.14; domyslnie double (ma 8b)
+y=3.14f; zmiana na float (ma 4b)
+
+!!!niejawna konwersja jest niedozwolona w c#!!!
+
+int x = (int)y; jawna konwersja
+float y=3.14; niejawna konwersja
+
+long z = x; dozwolone.
+
+
+3.-------------ZMIENNE
+!!!true i false malymi literami w cs!!!
+
+decimal jest do wrpowadzania wartosci ulamkowych, mamniejszy zakres niz double int i float i jest wolniejszy.
+
+string moze przyjmowac null, ale najlepiej pisac:
+string? odp=Console.ReadLine();
+mimo zetotez jest poprawnie:
+string odp=Console.ReadLine();
+
+int x = 1_000_234; mozna tak robic zapisujac liczbe 1000234 i uzyc _ jako sepratora
+
+
+4.-------------WYJATKI
+TryParse
+bool ok = int.TryParse(odp, out nLiczba);
+
+Parse
+nliczba = int.Prase(odp);
+
+
+5.-------------FUNKCJE
+przy wywołaniu konieczne jest wpisanie typu zmiennej tak aby wiedziec jaki arg jets przekazywany.
+TryParse(odp, out nLiczba); w tym wypadku out int
+
+
+6.-------------ZASIEG ZMIENNYCH
+zabroniono zasłaniana zmiennych.
+zmienna na zewnatrz bloku jest wazniejsza mimo miejsca czy czasu utworzenia wewnetrznej zmiennej.
