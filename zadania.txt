@@ -1,0 +1,25 @@
+string? odp = Console.ReadLine();
+
+int l = int.Parse(odp);
+
+Console.WriteLine(l);
+
+if (l < 0)
+{ Console.WriteLine('-'); }
+else if (l==0)
+{ Console.WriteLine('0'); }
+else
+{ Console.WriteLine('+');}
+
+
+double p = Math.Sqrt(l);
+string a = "liczba jest pierwsza";
+
+for (int i = 2; i<p; i++)
+{
+    if (l%i == 0)
+    {
+        a = "liczba nie jest pierwsza";
+    }
+}
+Console.WriteLine(a);
