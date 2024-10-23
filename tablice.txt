@@ -1,0 +1,62 @@
+using System;
+
+static void Main() //Main musi byc z duzej
+{
+    Random random = new Random();
+    //string strT = "T0";
+
+    //string strT1 = new string("T1");
+
+    //char[] charT2 = ['T', 't', 'P', 'p'];
+    //string strT2 = new string(charT2);
+
+    //Console.WriteLine(@"  *  
+    //                     *** 
+    //                    *****");
+    //rozmiar musi pasowac do tablicy
+
+
+
+    //stworz tab 100 elementowa wypelniona randomowymi
+    int[] tab = new int [100];
+    for (int i = 0; i<100; i++)
+    {
+        tab[i] = random.Next(10);
+    }
+    //wypisz
+    foreach (int el in tab)
+    {
+        Console.WriteLine($"el, ");
+    }
+
+    //min, max sum, sr
+    int min = 100;
+    for (int i = 0; i < 100; i++)
+    {
+        if (tab[i] < min)
+        { min = tab[i]; }
+    }
+
+    int max = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        if (tab[i] > max)
+        { max = tab[i]; }
+    }
+
+    int sum = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        sum += tab[i];
+    }
+
+    float sr = (float)(sum / 100);
+
+    Array Sort(tab);
+
+    //wypisz
+    foreach (int el in tab)
+    {
+        Console.WriteLine($"el, ");
+    }
+}
