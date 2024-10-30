@@ -1,0 +1,49 @@
+na za tydzien jakis prosty projekt
+na za dwa tygodnie pesel w c#
+
+
+
+class App
+{
+    static void Main()
+    {
+        Random random  = new();
+        Console.WriteLine("Podaj liczbe od 1 do 100 wliczjac obie :3");
+        string? x = Console.ReadLine();
+        bool ok = int.TryParse(x, out int odp);
+
+        while (odp >= 100 || odp <= 1)
+        {
+            Console.WriteLine("nieprawidlowa wartosc");
+            x = Console.ReadLine();
+            ok = int.TryParse(x, out odp);
+        };
+
+        List<int> lista = new();
+
+        for (int i = 0; i < odp; i++)
+        {
+            lista.Add(random.Next(100));
+        }
+
+        foreach(int el in lista)
+        {
+            Console.WriteLine(el);
+        }
+
+        for (int i = 0; i<odp; i++)
+        {
+            if (lista%3 == 0)
+            {
+                lista.RemoveAt(el);
+            }
+        }
+        foreach (int el in lista)
+        {
+            Console.WriteLine(el);
+        }
+
+    }
+}
+    
+
