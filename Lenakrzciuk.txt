@@ -1,0 +1,77 @@
+//imie
+//nazwisko
+//data urodzenia
+//plec
+//pesel
+
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Intrinsics.Arm;
+class Pesel
+{
+    static void Main()
+    {
+//imie
+        Console.WriteLine("Podaj imie:");
+        string? imie = Console.ReadLine();
+        while (imie.Contains(' '))
+        {
+            Console.WriteLine("Imie niepoprawne");
+            imie = Console.ReadLine();
+        }
+        imie = imie.Substring(0,1).ToUpper() + imie.Substring(1).ToLower();
+        Console.WriteLine(imie);
+        
+
+//nazwisko
+        Console.WriteLine("Podaj Nazwisko:");
+        string? nazwisko = Console.ReadLine();
+        while (nazwisko.Contains(' '))
+        {
+            Console.WriteLine("nieprawidlowe imie!!! jest w nim spacja.");
+            nazwisko = Console.ReadLine();
+        }
+        nazwisko = nazwisko.Substring(0, 1).ToUpper() + nazwisko.Substring(1).ToLower();
+        Console.WriteLine(nazwisko);
+        
+
+//data urodzenia
+        Console.WriteLine("Podaj date urodzenia (0000-00-00):");
+        string? data = Console.ReadLine();
+        while (data.Length !=10 || data.Substring(4, 1) != "-" || data.Substring(7, 1) != "-")
+        {
+            Console.WriteLine("niepoprawne!");
+            data = Console.ReadLine();
+        }
+            int rok = 0;
+            int miesiac = 0;
+            int dzien = 0;
+            //int r;
+            //r = int.TryParse(data, out int r1);
+            //int r1 = parse.data.substring(0);
+
+//plec
+        Console.WriteLine("Podaj plec(K/M):");
+        string? plec = Console.ReadLine();
+        //sprawdzanie plci
+        while(plec != "K" && plec != "M")
+        {
+            Console.WriteLine("Niepoprawna odpowiedz\nPodaj plec(K/M):");
+            plec = Console.ReadLine();
+        }
+
+
+//pesel
+        Console.WriteLine("Podaj pesel:");
+        string? pesel = Console.ReadLine();
+        while (pesel.Length !=11)
+        {
+            Console.WriteLine("pesel niepoprawny");
+            pesel = Console.ReadLine();
+        }
+
+
+        
+        
+    }
+}
