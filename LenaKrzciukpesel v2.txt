@@ -1,0 +1,149 @@
+//imie
+//nazwisko
+//data urodzenia
+//plec
+//pesel
+
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Intrinsics.Arm;
+using static System.Net.Mime.MediaTypeNames;
+class Pesel
+{
+    static void Main()
+    {
+        //imie
+        Console.WriteLine("Podaj imie:");
+        string? imie = Console.ReadLine();
+        while (imie.Contains(' '))
+        {
+            Console.WriteLine("Imie niepoprawne");
+            imie = Console.ReadLine();
+        }
+        imie = imie.Substring(0, 1).ToUpper() + imie.Substring(1).ToLower();
+        Console.WriteLine("twoje imie: " + imie);
+
+
+        //nazwisko
+        Console.WriteLine("Podaj Nazwisko:");
+        string? nazwisko = Console.ReadLine();
+        if(nazwisko.Contains(' ') || nazwisko.Contains('-'))
+        {
+            nazwisko = nazwisko.Substring(0, 1).ToUpper() + nazwisko.Substring(1).ToLower();
+            nazwisko = nazwisko.Replace(' ', '-');
+            int a = 0;
+            for (int i = 0; i < nazwisko.Length; i++)
+            {
+
+                if (nazwisko.Substring(i, 1) == "-")
+                {
+                    a = i + 1;
+                }
+            }
+            nazwisko = nazwisko.Substring(0, a) + nazwisko.Substring(a, 1).ToUpper() + nazwisko.Substring(a + 1).ToLower();
+        }
+        else
+        {
+            nazwisko = nazwisko.Substring(0, 1).ToUpper() + nazwisko.Substring(1).ToLower();
+        }
+        Console.WriteLine("twoje nazwisko: "+nazwisko);
+
+
+    //data urodzenia
+        Console.WriteLine("Podaj date urodzenia (rrrr-mm-dd):");
+        string? data = Console.ReadLine();
+        while (data.Length != 10 || data.Substring(4, 1) != "-" || data.Substring(7, 1) != "-")
+        {
+            Console.WriteLine("niepoprawne!");
+            data = Console.ReadLine();
+        }
+        string datarok = data.Substring(0,4);
+        string datamiesiac = data.Substring(5,2);
+        string datadzien = data.Substring(8, 2);
+
+        //rokkk
+        bool ok = int.TryParse(datarok, out int rok);
+        if (ok)
+        {
+            if (rok < 1800 || rok > 2299)
+            {
+                Console.WriteLine("niepoprawne rok!");
+                Environment.Exit(1);
+            }
+        }
+
+        //miesiaccc
+        bool okk = int.TryParse(datamiesiac, out int miesiac);
+        if (okk)
+        {
+            if (miesiac < 1 || miesiac > 12)
+            {
+                Console.WriteLine("niepoprawne miesiac!");
+                Environment.Exit(1);
+            }
+        }
+
+        //dzienn
+        bool okkk = int.TryParse(datadzien, out int dzien);
+        if (okkk)
+        {
+            if (dzien < 1 && dzien >31)
+            {
+                Console.WriteLine("niepoprawne dzien wiekszy od 31!");
+                Environment.Exit(1);
+            }
+            else if( (miesiac == 2 || miesiac == 4 || miesiac == 6 || miesiac == 9 || miesiac == 11) && dzien>30)
+            {
+                Console.WriteLine("niepoprawne dzien wiekszy od 30!");
+                Environment.Exit(1);
+            }
+            else if( miesiac == 2 && dzien > 29 && rok%4 ==0)
+            {
+                Console.WriteLine("niepoprawned dzien wiekszy od 29!");
+                Environment.Exit(1);
+            }
+            else if (miesiac == 2 && dzien > 28 && rok % 4 != 0)
+            {
+                Console.WriteLine("niepoprawne dzien wiekszy od 28!");
+                Environment.Exit(1);
+            }
+        }
+        //Console.WriteLine("rok: " + rok + " miesiac: " + miesiac + " dzien: " + dzien);
+        //Console.WriteLine("rok: "+datarok+" miesiac: "+datamiesiac+" dzien: "+datadzien);
+
+
+        //plec
+        Console.WriteLine("Podaj plec(K/M):");
+        string? plec = Console.ReadLine();
+        plec = plec.ToUpper();
+        Console.WriteLine(plec);
+        //sprawdzanie plci
+        while (plec != "K" || plec != "M")
+        {
+            Console.WriteLine("Niepoprawna odpowiedz\nPodaj plec(K/M):");
+            plec = Console.ReadLine();
+            plec = plec.ToUpper();
+        }
+
+
+    //pesel
+        Console.WriteLine("Podaj pesel:");
+        string? pesel = Console.ReadLine();
+        while (pesel.Length != 11)
+        {
+            Console.WriteLine("pesel niepoprawny");
+            pesel = Console.ReadLine();
+        }
+
+        //for(pesel)
+         //   {
+         //   bool x = true;
+
+
+        //}
+
+
+
+
+    }
+}
