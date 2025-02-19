@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.MainPage">
+
+
+    <VerticalStackLayout 
+        x:Name="stackLayout"
+        BackgroundColor="#8AC57D">
+
+        <HorizontalStackLayout 
+            BackgroundColor="#4D8040">
+            <Label 
+                Text="Wizyta u weterynarza"
+                FontSize="35"
+                TextColor="#1D4115"
+                Padding="20,20,20,20"/>
+        </HorizontalStackLayout>
+                <Entry Placeholder="Imie i nazwisko właściciela..."
+                       PlaceholderColor="#6C6D6C"></Entry>
+        
+                <Label Text="Gatunek"
+                       TextColor="#6C6D6C"/>
+                <Label Text="Pies"/>
+                <Line Stroke="#6C6D6C"
+                      StrokeThickness="1"
+                      X2="400"/>
+                <Label Text="Kot"/>
+                <Line Stroke="#6C6D6C"
+              StrokeThickness="1"
+              X2="400"/>
+                <Label Text="Świnka morska"/>
+                <Line Stroke="#6C6D6C"
+              StrokeThickness="1"
+              X2="400"/>
+
+                <Label Text="Ile ma lat?"
+                       TextColor="#6C6D6C"
+                       Margin="0,25,0,10"
+                       />
+        <Slider HeightRequest="2"
+                        WidthRequest="400"
+                        Maximum="21"
+                        Minimum="0"/>
+
+        <Entry
+                    Placeholder="Cel wizyty"
+                    PlaceholderColor="#6C6D6C"/>
+                <TimePicker ></TimePicker>
+            <Button Text="OK"
+                        WidthRequest="100"
+                        />
+    </VerticalStackLayout>
+
+
+</ContentPage>
