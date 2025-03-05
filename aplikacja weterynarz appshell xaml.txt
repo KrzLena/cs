@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp3.MainPage">
-
+             x:Class="zad1.MainPage">
 
     <VerticalStackLayout 
         x:Name="stackLayout"
@@ -16,25 +15,16 @@
                 TextColor="#1D4115"
                 Padding="20,20,20,20"/>
         </HorizontalStackLayout>
-                <Entry Placeholder="Imie i nazwisko właściciela..."
+        <Entry Placeholder="Imie i nazwisko właściciela..."
                        PlaceholderColor="#6C6D6C"></Entry>
-        
-                <Label Text="Gatunek"
-                       TextColor="#6C6D6C"/>
-                <Label Text="Pies"/>
-                <Line Stroke="#6C6D6C"
-                      StrokeThickness="1"
-                      X2="400"/>
-                <Label Text="Kot"/>
-                <Line Stroke="#6C6D6C"
-              StrokeThickness="1"
-              X2="400"/>
-                <Label Text="Świnka morska"/>
-                <Line Stroke="#6C6D6C"
-              StrokeThickness="1"
-              X2="400"/>
 
-                <Label Text="Ile ma lat?"
+        <Label Text="Gatunek"
+                       TextColor="#6C6D6C"/>
+        <ListView ItemsSource="{Binding Animals}"
+                 x:Name="animalsList"
+                 ItemTapped="animalsList_ItemTapped"/>
+
+        <Label Text="Ile ma lat?"
                        TextColor="#6C6D6C"
                        Margin="0,25,0,10"
                        />
@@ -46,11 +36,12 @@
         <Entry
                     Placeholder="Cel wizyty"
                     PlaceholderColor="#6C6D6C"/>
-                <TimePicker ></TimePicker>
-            <Button Text="OK"
+        <TimePicker ></TimePicker>
+        <Button Text="OK"
                         WidthRequest="100"
                         />
     </VerticalStackLayout>
 
 
 </ContentPage>
+
