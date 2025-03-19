@@ -3,26 +3,27 @@ mainpage.xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="zadanka.MainPage">
+             x:Class="zad2.MainPage">
 
     <ContentPage.Resources>
         <Color x:Key="Primary">#ab3527</Color>
         <Color x:Key="Secondary">#ab3527</Color>
         <Color x:Key="Tertiary">#ab3527</Color>
     </ContentPage.Resources>
+    <Frame BackgroundColor="white" x:Name="frame">
+        <VerticalStackLayout>
+            <Label Text="Color picker RGB" TextColor="white" HorizontalTextAlignment="Center"></Label>
 
-    <VerticalStackLayout>
-        <Label Text="Color picker RGB" TextColor="white" HorizontalTextAlignment="Center"></Label>
+            <Label Text="Red" TextColor="white" HorizontalTextAlignment="Center"></Label>
+            <Slider x:Name="red" WidthRequest="200" Margin="20" ValueChanged="Red_ValueChanged"></Slider>
 
-        <Label Text="Red" TextColor="white" HorizontalTextAlignment="Center"></Label>
-        <Slider x:Name="red" WidthRequest="200" Margin="20"></Slider>
+            <Label Text="Green" TextColor="white" HorizontalTextAlignment="Center"></Label>
+            <Slider x:Name="green" WidthRequest="200" Margin="20" ValueChanged="Green_ValueChanged"></Slider>
 
-        <Label Text="Green" TextColor="white" HorizontalTextAlignment="Center"></Label>
-        <Slider x:Name="green" WidthRequest="200" Margin="20"></Slider>
-
-        <Label Text="Blue" TextColor="white" HorizontalTextAlignment="Center"></Label>
-        <Slider x:Name="blue" WidthRequest="200" Margin="20"></Slider>
-    </VerticalStackLayout>
+            <Label Text="Blue" TextColor="white" HorizontalTextAlignment="Center"></Label>
+            <Slider x:Name="blue" WidthRequest="200" Margin="20" ValueChanged="Blue_ValueChanged"></Slider>
+        </VerticalStackLayout>
+    </Frame>
 
 </ContentPage>
 
@@ -33,18 +34,36 @@ mainpage.xaml
 
 mainpage.xaml.cs
 
-namespace zadanka
+namespace zad2
 {
     public partial class MainPage : ContentPage
     {
-        
+
         public MainPage()
         {
             InitializeComponent();
         }
 
+        private void Blue_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            int b;
+            b = blue.Value;
 
+        }
 
+        private void Red_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            int r;
+            r = red.Value;
+           
+        }
+
+        private void Green_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            int g;
+            g = green.Value;
+
+        }
     }
 
 }
