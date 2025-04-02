@@ -1,8 +1,8 @@
-﻿namespace GradientApp
+namespace zad
 {
     public partial class MainPage : ContentPage
     {
-        private bool isAnimating // Flaga pozwoli nam sterować animacją, nalezy ustawić wartość początkową
+        private bool isAnimating = false; // Flaga pozwoli nam sterować animacją, nalezy ustawić wartość początkową
         public MainPage()
         {
             InitializeComponent();
@@ -10,13 +10,13 @@
 
         private async void Button_Clicked(object sender, EventArgs e) // Funkcja obslugująca wywołanie animacji dla gradientu 
         {
-            if () return; // Sprawdzamy flage dzięki czemu możemy dodać zatrzymanie animacji
+            if (isAnimating == false) return; // Sprawdzamy flage dzięki czemu możemy dodać zatrzymanie animacji
 
-            isAnimating = ; // Ustawiamy flagę aby rozpoczać animacje
+            isAnimating = true; // Ustawiamy flagę aby rozpoczać animacje
 
             Color[] colors =  // Tablica kolorów potrzebna do utworzenia gradientu i animacji
             {
-            Colors.Red, // Potrzebujemy kilka/kilkanaście kolorów według uznania
+            Colors.Red,Colors.Blue, Colors.Yellow // Potrzebujemy kilka/kilkanaście kolorów według uznania
             };
 
             while (isAnimating) // Główna pętla animacji
