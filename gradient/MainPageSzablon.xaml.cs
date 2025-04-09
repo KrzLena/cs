@@ -3,6 +3,7 @@ namespace zad
     public partial class MainPage : ContentPage
     {
         private bool isAnimating = false; // Flaga pozwoli nam sterować animacją, nalezy ustawić wartość początkową
+
         public MainPage()
         {
             InitializeComponent();
@@ -24,10 +25,13 @@ namespace zad
                 for (int i = 0; i < colors.Length - 1; i++) // pętla w zakresie ilosci kolorów w tablicy
                 {
 
-                    gradientB.GradientStops[0].Color = colors[i]; // Mechanizm ustawiający odpowiednie kolory w gradiencie,
-                                                                  // ustawiamy ich tyle ile jest przejśc w gradiencie,
-                                                                  // dla kolejnych przejsc i uzyskania efektu przewijania
-                                                                  // skorzystamy z operatora modulo w indeksie tablicy
+                    gradientB.GradientStops[0].Color = colors[i];
+                    gradientB.GradientStops[1].Color = colors[i+1];
+                    gradientB.GradientStops[2].Color = colors[i+2];
+                    // Mechanizm ustawiający odpowiednie kolory w gradiencie,
+                    // ustawiamy ich tyle ile jest przejśc w gradiencie,
+                    // dla kolejnych przejsc i uzyskania efektu przewijania
+                    // skorzystamy z operatora modulo w indeksie tablicy
                     await Task.Delay(500); // robimy pauze dla lepszego efektu
                 }
             }
