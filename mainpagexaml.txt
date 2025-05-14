@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+             Title="Zagraj w gre">
+
+    <ScrollView BackgroundColor="LightGreen">
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+            <Label Text="Points: "></Label>
+            <Label x:Name="punkty">0</Label>
+        </HorizontalStackLayout>
+            <HorizontalStackLayout>
+            <Label Text="Time: "></Label>
+            <Label x:Name="czas">30</Label>
+        </HorizontalStackLayout>
+            
+            <Button
+                x:Name="p"
+                Text="Play"
+                WidthRequest="60"
+                HeightRequest="40"
+                BackgroundColor="Green"
+                Clicked="Button_Clicked"
+                VerticalOptions="End"
+                Margin="0,500,0,0"
+                TextColor="White"
+                BorderColor="DarkGreen"
+                BorderWidth="2"></Button>
+            
+        </VerticalStackLayout>
+        
+        
+    </ScrollView>
+
+</ContentPage>
